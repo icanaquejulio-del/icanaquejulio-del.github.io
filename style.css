@@ -1,7 +1,12 @@
+:root {
+  --azul: #243452;
+  --azul-claro: #cfe3ff;
+}
+
 body {
   margin: 0;
-  background-color: #e5e7eb;
-  color: #555555;
+  background-color: #e6eaf1;
+  color: #4a5568;
   font-family: "Raleway", sans-serif;
   line-height: 1.6;
 }
@@ -16,13 +21,10 @@ body {
 }
 
 .lateral {
-  background-color: #243452;
-  color: #ffffff;
-  padding: 40px 25px;
-}
-
-.lateral a {
-  color: #cfe3ff;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(var(--azul) 310px, #f3f5f9 310px);
+  padding: 40px 0 0;
 }
 
 .lateral img {
@@ -41,6 +43,28 @@ body {
 
 .lateral section {
   margin-bottom: 30px;
+  padding: 0 25px;
+}
+
+.lateral section:not(#contacto) {
+  order: 1;
+}
+
+#contacto {
+  order: 2;
+  margin: auto 0 0;
+  padding: 30px 25px;
+  background-color: var(--azul);
+  color: #ffffff;
+}
+
+#contacto a {
+  color: var(--azul-claro);
+}
+
+#contacto h2 {
+  color: #ffffff;
+  border-bottom-color: var(--azul-claro);
 }
 
 main {
@@ -53,7 +77,7 @@ main section {
 
 h1 {
   margin: 0;
-  color: #444444;
+  color: var(--azul);
   font-size: 3rem;
   font-weight: 300;
   text-transform: uppercase;
@@ -75,23 +99,18 @@ h1 {
   content: "";
   flex: 1;
   height: 6px;
-  background-color: #243452;
+  background-color: var(--azul);
 }
 
 h2 {
   display: inline-block;
   margin-bottom: 15px;
   padding-bottom: 6px;
-  border-bottom: 2px solid #333333;
-  color: #333333;
+  border-bottom: 2px solid var(--azul);
+  color: var(--azul);
   text-transform: uppercase;
   letter-spacing: 2px;
   font-size: 18px;
-}
-
-.lateral h2 {
-  color: #ffffff;
-  border-bottom-color: #ffffff;
 }
 
 h3 {
@@ -104,24 +123,49 @@ li {
   margin-bottom: 6px;
 }
 
+/* Textos largos o correos nunca deben salirse de la pantalla */
 h1,
 .lateral li,
 main p {
   overflow-wrap: anywhere;
 }
 
-/* Tabletas y pantallas medianas: una sola columna */
 @media (max-width: 860px) {
   .cv {
+    --banda: 294px;
     grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto 1fr;
+    /* Franja azul detrás de la foto */
+    background: linear-gradient(var(--azul) var(--banda), #ffffff var(--banda));
   }
 
   .lateral {
-    padding: 32px 24px;
+    display: contents;
+  }
+
+  .lateral img {
+    order: 1;
+    margin: 32px auto;
   }
 
   main {
-    padding: 32px 24px;
+    order: 2;
+    padding: 24px;
+  }
+
+  .lateral section {
+    margin: 0;
+    padding: 28px 24px;
+  }
+
+  .lateral section:not(#contacto) {
+    order: 3;
+  }
+
+  #contacto {
+    order: 4;
+    margin: 0;
+    padding: 28px 24px;
   }
 }
 
@@ -131,18 +175,23 @@ main p {
     font-size: 15px;
   }
 
-  .lateral {
-    padding: 28px 20px;
+  .cv {
+    --banda: 240px;
   }
 
   .lateral img {
     width: 160px;
     height: 184px;
-    margin-bottom: 24px;
+    margin: 28px auto;
+  }
+
+  .lateral section,
+  #contacto {
+    padding: 24px 20px;
   }
 
   main {
-    padding: 28px 20px;
+    padding: 24px 20px;
   }
 
   h1 {
