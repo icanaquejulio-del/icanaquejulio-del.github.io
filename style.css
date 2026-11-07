@@ -38,6 +38,7 @@ body {
 
 .lateral ul {
   list-style: none;
+  margin: 0;
   padding: 0;
 }
 
@@ -120,10 +121,30 @@ h3 {
 }
 
 li {
-  margin-bottom: 6px;
+  margin-bottom: 10px;
+  line-height: 1.45;
 }
 
-/* Textos largos o correos nunca deben salirse de la pantalla */
+li:last-child {
+  margin-bottom: 0;
+}
+
+main p {
+  margin: 0 0 12px;
+}
+
+main h3 {
+  margin: 22px 0 4px;
+}
+
+main h2 + h3 {
+  margin-top: 0;
+}
+
+main h3 ~ p {
+  margin: 0 0 2px;
+}
+
 h1,
 .lateral li,
 main p {
@@ -135,7 +156,6 @@ main p {
     --banda: 294px;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto 1fr;
-    /* Franja azul detrás de la foto */
     background: linear-gradient(var(--azul) var(--banda), #ffffff var(--banda));
   }
 
