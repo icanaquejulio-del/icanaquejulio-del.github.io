@@ -104,56 +104,72 @@ li {
   margin-bottom: 6px;
 }
 
-@media (max-width: 700px) {
-  body {
-    font-size: 13px;
-  }
+h1,
+.lateral li,
+main p {
+  overflow-wrap: anywhere;
+}
 
+/* Tabletas y pantallas medianas: una sola columna */
+@media (max-width: 860px) {
   .cv {
-    grid-template-columns: 35% 1fr;
+    grid-template-columns: 1fr;
   }
 
   .lateral {
-    padding: 20px 12px;
-  }
-
-  .lateral img {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 200 / 230;
-    margin: 0 0 20px;
-  }
-
-  .lateral li {
-    overflow-wrap: anywhere;
+    padding: 32px 24px;
   }
 
   main {
-    padding: 20px 14px;
+    padding: 32px 24px;
+  }
+}
+
+/* Celulares */
+@media (max-width: 520px) {
+  body {
+    font-size: 15px;
+  }
+
+  .lateral {
+    padding: 28px 20px;
+  }
+
+  .lateral img {
+    width: 160px;
+    height: 184px;
+    margin-bottom: 24px;
+  }
+
+  main {
+    padding: 28px 20px;
   }
 
   h1 {
-    font-size: 1.2rem;
-    letter-spacing: 1px;
+    font-size: 1.7rem;
+    letter-spacing: 2px;
   }
 
   .cargo {
-    gap: 8px;
-    margin: 8px 0 25px;
-    font-size: 11px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    margin: 12px 0 28px;
+    font-size: 13px;
     letter-spacing: 1px;
   }
 
   .cargo::after {
+    flex: none;
     height: 4px;
   }
 
   h2 {
-    font-size: 13px;
-    letter-spacing: 1px;
+    font-size: 15px;
+    letter-spacing: 1.5px;
   }
 
   h3 {
-    font-size: 13px;
+    font-size: 15px;
   }
 }
