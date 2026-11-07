@@ -170,7 +170,11 @@ main p {
 
   main {
     order: 2;
-    padding: 24px;
+    padding: 24px 24px 0;
+  }
+
+  main section:last-child {
+    margin-bottom: 0;
   }
 
   .lateral section {
@@ -180,6 +184,7 @@ main p {
 
   .lateral section:not(#contacto) {
     order: 3;
+    padding-top: 28px;
   }
 
   #contacto {
@@ -189,7 +194,6 @@ main p {
   }
 }
 
-/* Celulares */
 @media (max-width: 520px) {
   body {
     font-size: 15px;
@@ -211,7 +215,7 @@ main p {
   }
 
   main {
-    padding: 24px 20px;
+    padding: 24px 20px 0;
   }
 
   h1 {
