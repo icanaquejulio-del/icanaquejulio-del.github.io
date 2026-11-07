@@ -1,0 +1,159 @@
+body {
+  margin: 0;
+  background-color: #e5e7eb;
+  color: #555555;
+  font-family: "Raleway", sans-serif;
+  line-height: 1.6;
+}
+
+.cv {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  max-width: 1000px;
+  min-height: 100vh;
+  margin: 0 auto;
+  background-color: #ffffff;
+}
+
+.lateral {
+  background-color: #243452;
+  color: #ffffff;
+  padding: 40px 25px;
+}
+
+.lateral a {
+  color: #cfe3ff;
+}
+
+.lateral img {
+  display: block;
+  width: 200px;
+  height: 230px;
+  margin: 0 auto 40px;
+  object-fit: cover;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+.lateral ul {
+  list-style: none;
+  padding: 0;
+}
+
+.lateral section {
+  margin-bottom: 30px;
+}
+
+main {
+  padding: 40px;
+}
+
+main section {
+  margin-bottom: 30px;
+}
+
+h1 {
+  margin: 0;
+  color: #444444;
+  font-size: 3rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.cargo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 10px 0 40px;
+  color: #333333;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.cargo::after {
+  content: "";
+  flex: 1;
+  height: 6px;
+  background-color: #243452;
+}
+
+h2 {
+  display: inline-block;
+  margin-bottom: 15px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid #333333;
+  color: #333333;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 18px;
+}
+
+.lateral h2 {
+  color: #ffffff;
+  border-bottom-color: #ffffff;
+}
+
+h3 {
+  margin-bottom: 4px;
+  color: #333333;
+  font-size: 16px;
+}
+
+li {
+  margin-bottom: 6px;
+}
+
+@media (max-width: 700px) {
+  body {
+    font-size: 13px;
+  }
+
+  .cv {
+    grid-template-columns: 35% 1fr;
+  }
+
+  .lateral {
+    padding: 20px 12px;
+  }
+
+  .lateral img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 200 / 230;
+    margin: 0 0 20px;
+  }
+
+  .lateral li {
+    overflow-wrap: anywhere;
+  }
+
+  main {
+    padding: 20px 14px;
+  }
+
+  h1 {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+  }
+
+  .cargo {
+    gap: 8px;
+    margin: 8px 0 25px;
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
+
+  .cargo::after {
+    height: 4px;
+  }
+
+  h2 {
+    font-size: 13px;
+    letter-spacing: 1px;
+  }
+
+  h3 {
+    font-size: 13px;
+  }
+}
